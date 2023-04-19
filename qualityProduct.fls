@@ -1,0 +1,31 @@
+import net.sourceforge.jFuzzyLogic.FIS;
+import net.sourceforge.jFuzzyLogic.rule.Variable;
+
+public class ProductQuality {
+    public static void main(String[] args) {
+        // Load fuzzy logic file
+        String fileName = "product_quality.fcl";
+        FIS fis = FIS.load(fileName, true);
+
+        // Error checking
+        if (fis == null) {
+            System.err.println("Can't load file: '" + fileName + "'");
+            return;
+        }
+
+        // Set inputs
+        fis.setVariable("price", 1200);
+        fis.setVariable("durability", 6);
+        fis.setVariable("features", 8);
+
+        // Evaluate
+        fis.evaluate();
+
+        // Get output
+        Variable output = fis.getVariable("quality");
+        System.out.println("Quality: " + output.getValue());
+        
+        // Plot graph
+        output.chartDefuzzifier(true);
+    }
+}
