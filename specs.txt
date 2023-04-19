@@ -1,0 +1,29 @@
+Subject: Product Quality
+Ground Rules:
+
+Inputs:
+  Price (in dollars)
+    Universe: [0, 2000]
+    Fuzzy sets:
+      Cheap: triangular, [(0, 1), (500, 0), (1000, 0)]
+      Affordable: triangular, [(500, 0), (1000, 1), (1500, 0)]
+      Expensive: triangular, [(1000, 0), (1500, 1), (2000, 1)]
+  Durability (in years)
+    Universe: [0, 10]
+    Fuzzy sets:
+      Low: triangular, [(0, 1), (2.5, 0), (5, 0)]
+      Medium: triangular, [(2.5, 0), (5, 1), (7.5, 0)]
+      High: triangular, [(5, 0), (7.5, 1), (10, 0)]
+  Features (out of 10)
+    Universe: [0, 10]
+    Fuzzy sets:
+      Basic: triangular, [(0, 1), (3, 0), (6, 0)]
+      Average: triangular, [(3, 0), (6, 1), (9, 0)]
+      Advanced: triangular, [(6, 0), (9, 1), (10, 1)]
+  Output:
+    Quality
+    Universe: [0, 10]
+    Fuzzy sets:
+      Poor: triangular, [(0, 1), (3, 0), (6, 0)]
+      Average: triangular, [(3, 0), (6, 1), (9, 0)]
+      Excellent: triangular, [(6, 0), (9, 1), (10, 1)]
